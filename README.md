@@ -6,7 +6,7 @@ primitives. Computationally, aggregates and joins are taking the majority
 of time. This project aims at a *minimal* benchmark of a few popular tools 
 for working with tabular data of moderately
 large sizes (but still within the reach of interactive data analysis - response times
-of a few seconds on a server/desktop or even laptop).
+of a few seconds on a server/desktop or even a laptop).
 
 This project is the continuation of my [similar benchmark](https://github.com/szilard/benchm-databases) from 10 years ago.
 
@@ -67,8 +67,8 @@ docker run dataframe-benchmark
 This is far from a comprehensive benchmark. It is my attempt to *quickly* get an idea of the order
 of magnitude of running times for aggregations and joins on datasets of sizes of interest to *me* at the moment. 
 The results are expected to vary with hardware, dataset size, structure etc.
-In addition, one might say that queries in practice are more complex and their running times depend not only 
-on how fast are these primitives, but also on how the query optimizer (if applicable) can deal with the given complexity. Again,
+In addition, one might say that queries in real practice are more complex and their running times depend not only 
+on how fast are these primitives, but also on how the query planner/optimizer (if applicable) can deal with the given complexity. Again,
 a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 
