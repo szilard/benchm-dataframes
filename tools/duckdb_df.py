@@ -11,19 +11,20 @@ con.execute("CREATE TABLE dm AS SELECT * FROM read_csv_auto('/tmp/dm.csv', heade
 con.execute("ALTER TABLE dm RENAME column0 TO x")
 end = time.time()
 print(f"Load time: {end - start:.3f} seconds")
-
+print()
 
 start = time.time()
 result = con.execute("SELECT x, AVG(y) AS ym FROM d GROUP BY x ORDER BY ym DESC LIMIT 5").fetchdf()
 print(result)
 end = time.time()
 print(f"Aggregation time: {end - start:.3f} seconds")
-
+print()
 
 start = time.time()
 result = con.execute("SELECT COUNT(*) FROM d INNER JOIN dm ON d.x = dm.x").fetchdf()
 print(f"Rows: {result.iloc[0, 0]}")
 end = time.time()
 print(f"Join time: {end - start:.3f} seconds")
+print()
 
 

@@ -8,12 +8,10 @@ print(system.time({
 setnames(d, c("x","y"))
 setnames(dm, "x")
 
-
 cat("\nAggregation time:\n")
 print(system.time(
   print(head(d[, list(ym=mean(y)), by=x][order(-ym)],5))
 ))
-
 
 cat("\nIndexing time:\n")
 print(system.time(

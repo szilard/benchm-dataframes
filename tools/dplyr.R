@@ -9,15 +9,12 @@ print(system.time({
 names(d) <- c("x","y")
 names(dm) <- "x"
 
-
 cat("\nAggregation time:\n")
 print(system.time(
   print(d %>% group_by(x) %>% summarise(ym=mean(y)) %>% arrange(desc(ym)) %>% head(5))
 ))
 
-
 cat("\nJoin time:\n")
 print(system.time(
   print(nrow(inner_join(d, dm, by="x")))
 ))
-
