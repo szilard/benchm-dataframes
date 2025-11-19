@@ -48,5 +48,10 @@ COPY tools/ tools/
 RUN chmod +x run_benchmarks.sh && \
     chmod +x tools/clickhouse_load.sh
 
+# Hack to allow starting clickhouse server      
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends sudo && \
+    rm -rf /var/lib/apt/lists/*    
+
 # Start ClickHouse server in the background and run benchmarks
 CMD service clickhouse-server start && sleep 5 && ./run_benchmarks.sh

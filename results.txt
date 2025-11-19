@@ -126,3 +126,18 @@ Aggregation time: 1.729 seconds
 
 Rows: 100000000
 Join time: 0.983 seconds
+
+
+-------------------- ClickHouse --------------------
+Load time: 30.497 seconds
+
+x          ym
+379304     0.632747
+675141     0.631726
+896742     0.631640
+155835     0.631040
+87664      0.630293
+Aggregation time: 0.402 seconds
+
+Rows: 100000000
+Join time: 0.339 seconds
