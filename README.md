@@ -18,8 +18,9 @@ The tools analysed are:
 - R data.table
 - R dplyr
 - duckdb
-- Python's pandas
-- polars (from Python)
+- python's pandas
+- polars (from python)
+- clickhouse
 
 
 #### Data
@@ -81,7 +82,7 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 |------|-------------|------|
 | data.table | 1.3 | 1.3 |
 | dplyr | 11.1 | 12.7 |
-| DuckDB | 1.4 | 0.8 |
+| duckdb | 1.4 | 0.8 |
 | pandas | 3.1 | 5.7 |
 | polars | 1.7 | 1.0 |
 

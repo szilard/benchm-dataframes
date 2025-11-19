@@ -22,11 +22,14 @@ RUN apt-get update && \
 
 # Install ClickHouse
 RUN mkdir -p /etc/apt/keyrings && \
-    wget -qO- https://packages.clickhouse.com/deb/lts/DEB-GPG-KEY-CLICKHOUSE | gpg --dearmor -o /etc/apt/keyrings/clickhouse-keyring.gpg && \
-    echo "deb [signed-by=/etc/apt/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main" | tee /etc/apt/sources.list.d/clickhouse.list && \
+    curl -fsSL 'https://packages.clickhouse.com/rpm/lts/repodata/repomd.xml.key' \
+      | gpg --dearmor -o /etc/apt/keyrings/clickhouse-keyring.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main" \
+      > /etc/apt/sources.list.d/clickhouse.list && \
     apt-get update && \
-    apt-get install -y clickhouse-server clickhouse-client && \
-    rm -rf /var/lib/apt/lists/*
+    apt-get install -y --no-install-recommends \
+      clickhouse-server clickhouse-client && \
+    rm -rf /var/lib/apt/lists/*    
 
 # Install R packages
 RUN Rscript -e 'install.packages(c("data.table","dplyr","readr"), repos="https://cloud.r-project.org")'
