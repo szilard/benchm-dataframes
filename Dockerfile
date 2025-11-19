@@ -16,6 +16,7 @@ RUN apt-get update && \
     apt-transport-https \
     ca-certificates \
     dirmngr \
+    curl \
     gnupg \
     wget && \
     rm -rf /var/lib/apt/lists/*
