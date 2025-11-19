@@ -21,11 +21,6 @@ print(f"Aggregation time: {end - start:.3f} seconds")
 
 
 start = time.time()
-con.execute("CREATE INDEX idx_d_x ON d(x)")
-end = time.time()
-print(f"Indexing time: {end - start:.3f} seconds")
-
-start = time.time()
 result = con.execute("SELECT COUNT(*) FROM d INNER JOIN dm ON d.x = dm.x").fetchdf()
 print(f"Rows: {result.iloc[0, 0]}")
 end = time.time()
