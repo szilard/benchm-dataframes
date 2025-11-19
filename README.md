@@ -76,7 +76,7 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 #### Results
 
-(times in seconds)
+(run times in seconds)
 
 | Tool | Aggregation | Join |
 |------|-------------|------|
@@ -89,3 +89,6 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 
 #### Discussions
+
+We know from the previous old [benchmark](https://github.com/szilard/benchm-databases)
+that traditional SQL databases (e.g. mysql, postgres) are terribly slow at these operations/sizes. We also know that the big data tools (e.g. hive, spark) are also super slow. The previous benchmark found that a couple of commercial MPPs/columnar databases are pretty decent, however with good open source tools (e.g. clickhouse) available now in that space, there is no reason to include them anymore.
