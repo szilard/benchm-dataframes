@@ -3,7 +3,7 @@ FROM ubuntu:24.04
 # Avoid interactive prompts during installation
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install R and required system dependencies
+# Install R, Python and required system dependencies
 RUN apt-get update && \
     apt-get install -y \
     r-base \
