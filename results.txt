@@ -1,0 +1,128 @@
+==========================================
+Generating test data...
+==========================================
+   user  system elapsed
+  8.994   1.743  23.443
+
+==========================================
+Runnning the benchmark...
+==========================================
+
+-------------------- data.table --------------------
+Load time:
+   user  system elapsed
+  2.648   0.454   0.819
+
+Aggregation time:
+        x        ym
+    <int>     <num>
+1: 379304 0.6327469
+2: 675141 0.6317256
+3: 896742 0.6316400
+4: 155835 0.6310400
+5:  87664 0.6302933
+   user  system elapsed
+  3.209   1.125   1.314
+
+Indexing time:
+   user  system elapsed
+  4.419   0.645   1.961
+
+Join time:
+[1] 100000000
+   user  system elapsed
+  1.360   0.544   1.321
+
+Aggregation time (with keys):
+        x        ym
+    <int>     <num>
+1: 379304 0.6327469
+2: 675141 0.6317256
+3: 896742 0.6316400
+4: 155835 0.6310400
+5:  87664 0.6302933
+   user  system elapsed
+  1.314   0.483   0.498
+
+-------------------- dplyr --------------------
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Load time:
+   user  system elapsed
+ 61.429   2.212   8.697
+
+Aggregation time:
+# A tibble: 5 × 2
+       x    ym
+   <dbl> <dbl>
+1 379304 0.633
+2 675141 0.632
+3 896742 0.632
+4 155835 0.631
+5  87664 0.630
+   user  system elapsed
+  9.848   1.213  11.088
+
+Join time:
+[1] 100000000
+   user  system elapsed
+ 10.469   2.253  12.722
+
+-------------------- DuckDB --------------------
+Load time: 2.471 seconds
+
+        x        ym
+0  379304  0.632747
+1  675141  0.631726
+2  896742  0.631640
+3  155835  0.631040
+4   87664  0.630293
+Aggregation time: 1.408 seconds
+
+Rows: 100000000
+Join time: 0.817 seconds
+
+
+-------------------- pandas --------------------
+Load time: 11.134 seconds
+
+             x        ym
+379303  379304  0.632747
+675140  675141  0.631726
+896741  896742  0.631640
+155834  155835  0.631040
+87663    87664  0.630293
+Aggregation time: 3.143 seconds
+
+Rows: 100000000
+Join time: 5.721 seconds
+
+
+-------------------- polars --------------------
+Load time: 0.867 seconds
+
+shape: (5, 2)
+┌────────┬──────────┐
+│ x      ┆ ym       │
+│ ---    ┆ ---      │
+│ i64    ┆ f64      │
+╞════════╪══════════╡
+│ 379304 ┆ 0.632747 │
+│ 675141 ┆ 0.631726 │
+│ 896742 ┆ 0.63164  │
+│ 155835 ┆ 0.63104  │
+│ 87664  ┆ 0.630293 │
+└────────┴──────────┘
+Aggregation time: 1.729 seconds
+
+Rows: 100000000
+Join time: 0.983 seconds

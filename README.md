@@ -71,5 +71,13 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 (times in seconds)
 
+| Tool | Aggregation | Join |
+|------|-------------|------|
+| data.table | 1.3 | 1.3 |
+| dplyr | 11.1 | 12.7 |
+| DuckDB | 1.4 | 0.8 |
+| pandas | 3.1 | 5.7 |
+| polars | 1.7 | 1.0 |
+
 
 #### Discussions
