@@ -22,3 +22,5 @@ sudo apt update
 sudo apt install -y clickhouse-server clickhouse-client
 
 sudo systemctl start clickhouse-server
+
+sudo pip3 install clickhouse_connect --break-system-packages
