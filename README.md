@@ -24,7 +24,7 @@ The tools analysed are:
 
 #### Data
 
-The data is [randomly generated](gendata.R): 
+The data used is [synthetic](gendata.R): 
 one table `d` (`x` integer, `y` float) of 100 million rows for aggregation
 (`x` takes 1 million distinct values) and another table `dm` (`x` integer) of 1 million rows for the join only.
 The larger table `d` is of ~2GB size in the CSV format and results in ~1GB usage when loaded in memory.
@@ -64,7 +64,7 @@ This is far from a comprehensive benchmark. It is my attempt to *quickly* get an
 of magnitude of running times for aggregations and joins on datasets of sizes of interest to *me* at the moment. 
 The results are expected to vary with hardware, dataset size, structure etc.
 In addition, one might say that queries in practice are more complex and their running times depend not only 
-on how fast are these primitives, but also on how the query optimizer (if applicable) can deal with complexity. Again,
+on how fast are these primitives, but also on how the query optimizer (if applicable) can deal with the given complexity. Again,
 a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 
