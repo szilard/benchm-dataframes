@@ -26,10 +26,4 @@ print(f"Rows: {result.iloc[0, 0]}")
 end = time.time()
 print(f"Join time: {end - start:.3f} seconds")
 
-start = time.time()
-result = con.execute("SELECT x, AVG(y) AS ym FROM d GROUP BY x ORDER BY ym DESC LIMIT 5").fetchdf()
-print(result)
-end = time.time()
-print(f"Aggregation time (2nd): {end - start:.3f} seconds")
 
-con.close()
