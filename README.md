@@ -55,6 +55,12 @@ inner join dm on d.x = dm.x;
 
 The tests have been performed on a m8i.2xlarge EC2 instance (8 cores, 32GB RAM) running Ubuntu 24.04.
 
+The easiest way to run the benchmark is to use the provided [Dockerfile](Dockerfile) and:
+```
+docker build -t dataframe-benchmark .
+docker run dataframe-benchmark
+```
+
 
 #### Limitations
 
