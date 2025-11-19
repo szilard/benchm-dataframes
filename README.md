@@ -57,8 +57,8 @@ The tests have been performed on a m8i.2xlarge EC2 instance (8 cores, 32GB RAM) 
 
 The easiest way to run the benchmark is to use the provided [Dockerfile](Dockerfile) and:
 ```
-docker build -t dataframe-benchmark .
-docker run dataframe-benchmark
+sudo docker build -t dataframe-benchmark .
+sudo docker run dataframe-benchmark
 ```
 
 
