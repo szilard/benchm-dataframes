@@ -19,6 +19,7 @@ RUN apt-get update && \
     curl \
     gnupg \
     sudo \
+    bc \
     wget && \
     rm -rf /var/lib/apt/lists/*
 
