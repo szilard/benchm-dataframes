@@ -11,7 +11,6 @@ echo "Runnning the benchmark..."
 echo "=========================================="
 echo ""
 
-# R Benchmarks
 echo "-------------------- data.table --------------------"
 Rscript tools/data_table.R
 echo ""
@@ -24,16 +23,15 @@ echo "-------------------- DuckDB --------------------"
 python3 tools/duckdb_df.py
 echo ""
 
-echo "-------------------- ClickHouse --------------------"
-bash tools/clickhouse_load.sh
-python3 tools/clickhouse.py
-echo ""
-
-# Python Benchmarks
 echo "-------------------- pandas --------------------"
 python3 tools/pandas_df.py
 echo ""
 
 echo "-------------------- polars --------------------"
 python3 tools/polars_df.py
+echo ""
+
+echo "-------------------- ClickHouse --------------------"
+bash tools/clickhouse_load.sh
+python3 tools/clickhouse.py
 echo ""

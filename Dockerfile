@@ -12,14 +12,27 @@ RUN apt-get update && \
     libssl-dev \
     build-essential \
     python3 \
-    python3-pip && \
+    python3-pip \
+    apt-transport-https \
+    ca-certificates \
+    dirmngr \
+    gnupg \
+    wget && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install ClickHouse
+RUN mkdir -p /etc/apt/keyrings && \
+    wget -qO- https://packages.clickhouse.com/deb/lts/DEB-GPG-KEY-CLICKHOUSE | gpg --dearmor -o /etc/apt/keyrings/clickhouse-keyring.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/clickhouse-keyring.gpg] https://packages.clickhouse.com/deb stable main" | tee /etc/apt/sources.list.d/clickhouse.list && \
+    apt-get update && \
+    apt-get install -y clickhouse-server clickhouse-client && \
     rm -rf /var/lib/apt/lists/*
 
 # Install R packages
 RUN Rscript -e 'install.packages(c("data.table","dplyr","readr"), repos="https://cloud.r-project.org")'
 
 # Install Python packages
-RUN pip3 install --break-system-packages pandas polars duckdb
+RUN pip3 install --break-system-packages pandas polars duckdb clickhouse_connect
 
 # Copy benchmark files
 WORKDIR /benchmarks
@@ -28,7 +41,8 @@ COPY run_benchmarks.sh .
 COPY tools/ tools/
 
 # Make benchmark script executable
-RUN chmod +x run_benchmarks.sh
+RUN chmod +x run_benchmarks.sh && \
+    chmod +x tools/clickhouse_load.sh
 
-# Run the benchmark
-CMD ["./run_benchmarks.sh"]
+# Start ClickHouse server in the background and run benchmarks
+CMD service clickhouse-server start && sleep 5 && ./run_benchmarks.sh
