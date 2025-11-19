@@ -1,26 +1,31 @@
 library(data.table)
 
-system.time({
+cat("Load time:\n")
+print(system.time({
   d <- fread("/tmp/d.csv")
   dm <- fread("/tmp/dm.csv")
-})
+}))
 setnames(d, c("x","y"))
 setnames(dm, "x")
 
 
-system.time(
+cat("\nAggregation time:\n")
+print(system.time(
   print(head(d[, list(ym=mean(y)), by=x][order(-ym)],5))
-)
+))
 
 
-system.time(
+cat("\nIndexing time:\n")
+print(system.time(
   setkey(d, x)
-)
+))
 
-system.time(
+cat("\nJoin time:\n")
+print(system.time(
   print(nrow(d[dm, nomatch=0]))
-)
+))
 
-system.time(
+cat("\nAggregation time (with keys):\n")
+print(system.time(
   print(head(d[, list(ym=mean(y)), by=x][order(-ym)],5))
-)
+))

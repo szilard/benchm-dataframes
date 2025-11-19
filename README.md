@@ -6,7 +6,7 @@ primitives. Computationally, aggregates and joins are taking the majority
 of time. This project aims at a *minimal* benchmark of a few popular tools 
 for working with tabular data of moderately
 large sizes (but still within the reach of interactive data analysis - response times
-of a few seconds on commodity hardware).
+of a few seconds on a server/desktop or even laptop).
 
 This project is the continuation of my [similar benchmark](https://github.com/szilard/benchm-databases) from 10 years ago.
 
@@ -54,8 +54,6 @@ inner join dm on d.x = dm.x;
 #### Setup
 
 The tests have been performed on a m8i.2xlarge EC2 instance (8 cores, 32GB RAM) running Ubuntu 24.04.
-The queries have been run 2 times and the second
-time was recorded (warm run). 
 
 
 #### Limitations
