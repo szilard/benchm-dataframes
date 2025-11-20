@@ -92,6 +92,8 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 | polars | 1.73 | 0.983 |
 | clickhouse | 0.402 | 0.339 |
 
+Plotted on log scales:
+
 ![plots](results/plot.png)
 
 
