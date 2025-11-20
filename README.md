@@ -85,12 +85,12 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 | Tool | Aggr.| Join |
 |------|-------------|------|
-| data.table | 1.3 | 1.3 |
+| data.table | 1.31 | 1.32 |
 | dplyr | 11.1 | 12.7 |
-| duckdb | 1.4 | 0.8 |
-| pandas | 3.1 | 5.7 |
-| polars | 1.7 | 1.0 |
-| clickhouse | 0.40 | 0.34 |
+| duckdb | 1.41 | 0.817 |
+| pandas | 3.14 | 5.72 |
+| polars | 1.73 | 0.983 |
+| clickhouse | 0.402 | 0.339 |
 
 
 #### Discussions
