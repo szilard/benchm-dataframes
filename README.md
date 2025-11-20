@@ -13,7 +13,7 @@ This project is the continuation of my [similar benchmark](https://github.com/sz
 
 #### Tools
 
-The tools analysed are statistical/data analysis software/libraries (R data.table, R dplyr, python's pandas, polars from python), an embedded analytical database engines (duckdb from python) and a columnar database (clickhouse). All are open source and readily available.
+The tools analysed are statistical/data analysis software/libraries (R data.table, R dplyr, python's pandas, polars from python), an embedded analytical database engine (duckdb from python) and a columnar database (clickhouse). All are open source and readily available.
 
 - R data.table
 - R dplyr
@@ -93,3 +93,8 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 #### Discussions
 
+When choosing a tool for data analysis, performance is only one of the criteria. Other factors include ease of use, 
+ecosystem, integration with other tools, community support, learning curve etc. However, performance matters, especially when dealing with larger datasets since fast tools alows you to explore the data more interactively and iterate quickly. 
+
+If you have data of similar sizes (100 million rows/a few GBs of data), based on the above and also my own 
+experience I would recommend using data.table in R (also because of the concise syntax and numerous features). If you prefer python, polars is a good choice (faster than pandas and also a nicer syntax). If you prefer to write SQL, duckdb is a great embedded analytical database engine (virtually zero setup) that can be used from both R or python. If you also don't mind the extra work in setup and maintenance (and again you like SQL), clickhouse is a great choice. 
