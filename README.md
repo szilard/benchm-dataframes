@@ -6,14 +6,14 @@ primitives. Computationally, aggregates and joins are taking the majority
 of time. This project aims at a *minimal* benchmark of a few popular tools 
 for working with tabular data of moderately
 large sizes (but still within the reach of interactive data analysis - response times
-of a few seconds on a server/desktop or even a laptop).
+of a few seconds on a commodity server/desktop or even a laptop).
 
 This project is the continuation of my [similar benchmark](https://github.com/szilard/benchm-databases) from 10 years ago.
 
 
 #### Tools
 
-The tools analysed are:
+The tools analysed are open source statistical/data analysis software/libraries (R data.table, R dplyr, python's pandas, polars from python) and embedded analytical database engines (duckdb from python) and a columnar database (clickhouse).
 
 - R data.table
 - R dplyr
@@ -21,6 +21,9 @@ The tools analysed are:
 - python's pandas
 - polars (from python)
 - clickhouse
+
+We know from the previous old [benchmark](https://github.com/szilard/benchm-databases)
+that traditional SQL databases (e.g. mysql, postgres) are terribly slow at these operations/sizes (100x slower). We also know that the big data tools (e.g. hive, spark) are also super slow (100x). The previous benchmark found that a couple of commercial MPPs/columnar databases are pretty decent, however with good open source tools (e.g. clickhouse) available now in that space, there is no reason to include them anymore. So, all the later tools are excluded from this benchmark.
 
 
 #### Data
@@ -68,7 +71,7 @@ sudo docker run dataframe-benchmark
 This is far from a comprehensive benchmark. It is my attempt to *quickly* get an idea of the order
 of magnitude of running times for aggregations and joins on datasets of sizes of interest to *me* at the moment. 
 The results are expected to vary with hardware, dataset size, structure etc.
-In addition, one might say that queries in real practice are more complex and their running times depend not only 
+In addition, one might say that data operations/queries in real practice are more complex and their running times depend not only 
 on how fast are these primitives, but also on how the query planner/optimizer (if applicable) can deal with the given complexity. Again,
 a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
@@ -90,5 +93,3 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 #### Discussions
 
-We know from the previous old [benchmark](https://github.com/szilard/benchm-databases)
-that traditional SQL databases (e.g. mysql, postgres) are terribly slow at these operations/sizes. We also know that the big data tools (e.g. hive, spark) are also super slow. The previous benchmark found that a couple of commercial MPPs/columnar databases are pretty decent, however with good open source tools (e.g. clickhouse) available now in that space, there is no reason to include them anymore.
