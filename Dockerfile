@@ -42,7 +42,7 @@ RUN pip3 install --break-system-packages pandas polars duckdb clickhouse_connect
 
 # Copy benchmark files
 WORKDIR /benchmarks
-COPY gendata.R .
+COPY generate_data.R .
 COPY run_benchmarks.sh .
 COPY tools/ tools/
 

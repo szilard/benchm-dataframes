@@ -3,7 +3,7 @@
 echo "=========================================="
 echo "Generating test data..."
 echo "=========================================="
-Rscript gendata.R
+Rscript generate_data.R
 echo ""
 
 echo "=========================================="

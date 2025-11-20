@@ -25,7 +25,7 @@ The tools analysed are:
 
 #### Data
 
-The data used is [synthetic](gendata.R): 
+The data used is [synthetic](generate_data.R): 
 one table `d` (`x` integer, `y` float) of 100 million rows for aggregation
 (`x` takes 1 million distinct values) and another table `dm` (`x` integer) of 1 million rows for the join only.
 The larger table `d` is of ~2GB size in the CSV format and results in ~1GB usage when loaded in memory.
