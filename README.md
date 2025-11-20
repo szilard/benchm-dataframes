@@ -94,7 +94,7 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 #### Discussions
 
 When choosing a tool for data analysis, performance is only one of the criteria. Other factors include ease of use, 
-ecosystem, integration with other tools, community support, learning curve etc. However, performance matters, especially when dealing with larger datasets since fast tools alows you to explore the data more interactively and iterate quickly. 
+ecosystem, integration with other tools, community support, learning curve etc. However, performance matters, especially when dealing with larger datasets since fast tools allows you to explore the data more interactively and iterate quickly. 
 
 If you have data of similar sizes (100 million rows/a few GBs of data), based on the above and also my own 
-experience I would recommend using data.table in R (also because of the concise syntax and numerous features). If you prefer python, polars is a good choice (faster than pandas and also a nicer syntax). If you prefer to write SQL, duckdb is a great embedded analytical database engine (virtually zero setup) that can be used from both R or python. If you also don't mind the extra work in setup and maintenance (and again you like SQL), clickhouse is a great choice. 
+experience I would recommend using data.table in R (also because of the concise syntax and numerous features). If you prefer python, polars is a good choice (faster than pandas and also a nicer syntax). If you prefer to write SQL, duckdb is a great embedded analytical database engine (virtually zero setup) that can be used from both R or python. If you also don't mind the extra work in setup and maintenance of a database server (and again you like SQL), clickhouse is a great choice. 
