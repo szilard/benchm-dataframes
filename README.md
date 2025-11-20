@@ -59,9 +59,9 @@ inner join dm on d.x = dm.x;
 
 The tests have been performed on a m8i.2xlarge EC2 instance (8 cores, 32GB RAM) running Ubuntu 24.04.
 You can actually get nowadays similar timings on a decent laptop (and also unlike 10+ years ago, 
-this data will fit now in your laptop's memory).
+this data will now fit in your laptop's memory).
 
-The easiest way to run the benchmark is to use the provided [Dockerfile](Dockerfile) and:
+The easiest way to run the benchmark is to use docker and the provided [Dockerfile](Dockerfile) and then:
 ```
 sudo docker build -t dataframe-benchmark .
 sudo docker run dataframe-benchmark
