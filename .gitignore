@@ -48,7 +48,7 @@ ENV/
 env/
 
 # Data files (CSV, generated data)
-*.csv
+#*.csv
 /tmp/
 
 # IDE
