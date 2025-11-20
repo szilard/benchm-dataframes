@@ -14,4 +14,4 @@ ggplot(d) + geom_text(aes(x = Aggr, y = Join, label = Tool), size = 6) +
     theme(axis.text = element_text(size = 14),
           axis.title = element_text(size = 16))
 
-ggsave("results/plot.png", width = 6, height = 6)
+ggsave("results/plot.png", width = 600, height = 600, units = "px")
