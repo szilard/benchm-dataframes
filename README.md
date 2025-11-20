@@ -81,7 +81,7 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 #### Results
 
-(run times in seconds)
+Run times in seconds:
 
 | Tool | Aggr.| Join |
 |------|-------------|------|
