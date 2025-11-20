@@ -13,7 +13,7 @@ This project is the continuation of my [similar benchmark](https://github.com/sz
 
 #### Tools
 
-The tools analysed are open source statistical/data analysis software/libraries (R data.table, R dplyr, python's pandas, polars from python) and embedded analytical database engines (duckdb from python) and a columnar database (clickhouse).
+The tools analysed are tatistical/data analysis software/libraries (R data.table, R dplyr, python's pandas, polars from python), an embedded analytical database engines (duckdb from python) and a columnar database (clickhouse). All are open source and readily available.
 
 - R data.table
 - R dplyr
