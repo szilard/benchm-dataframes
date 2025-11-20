@@ -9,7 +9,7 @@ ggplot(d) + geom_text(aes(x = Aggr, y = Join, label = Tool), size = 2) +
     scale_x_log10(breaks = ticks, labels = ticks, limits = c(min(ticks),max(ticks))) + 
     scale_y_log10(breaks = ticks, labels = ticks, limits = c(min(ticks),max(ticks))) +
     geom_line(data = data.frame(x = ticks, y = ticks), aes(x = x, y = y), 
-            linetype = "dashed", color="gray30", size = 0.3) +
+            linetype = "dashed", color="gray60", size = 0.3) +
     coord_equal() +
     theme(axis.text = element_text(size = 4),
           axis.title = element_text(size = 5),
