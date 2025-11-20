@@ -83,7 +83,7 @@ a comprehensive SQL benchmark is out of scope here (but see e.g. TPC-DS).
 
 (run times in seconds)
 
-| Tool | Aggregation | Join |
+| Tool | Aggr.| Join |
 |------|-------------|------|
 | data.table | 1.3 | 1.3 |
 | dplyr | 11.1 | 12.7 |
